@@ -1,0 +1,276 @@
+{
+  "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
+  "IsCustomNode": false,
+  "Description": "Duplica Vistas",
+  "Name": "Views.Duplicate",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "f8de44190df7483e8de630e769dcf516",
+      "Name": "Views",
+      "Type": "selection",
+      "Type2": "dropdownSelection",
+      "Value": "Level 1",
+      "Description": "All views available in the current document.",
+      "SelectedIndex": 8
+    }
+  ],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.Name",
+      "Id": "608635ff686c4d3da34b0e6a12e34e92",
+      "Inputs": [
+        {
+          "Id": "fb6ba9221e704c69a9f1379ec67ceb1e",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4b97e896a83843608a2cefd165b7a9d7",
+          "Name": "string",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the Name of the Element\n\nElement.Name: string"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "nome+\"Cópia\";",
+      "Id": "9b8be5646a26438389bffa4711f4ff23",
+      "Inputs": [
+        {
+          "Id": "77cbcd5a19da432a92113d5830eb3562",
+          "Name": "nome",
+          "Description": "nome",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "148aec22c38a4a29bf272c08809dae6b",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "237e943c-c1a0-4936-9269-1b5ad1dc8b4c",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "4bb70b5585da4d509cc11393a1efa1fe",
+      "Inputs": [
+        {
+          "Id": "684d210c2a5643c3a1421ac4d453a4f1",
+          "Name": "view",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "56225156af2c430b9cc56f0fbe3b1eb5",
+          "Name": "name",
+          "Description": "string[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "19fd292f327c41879e897d880b2baf9a",
+          "Name": "view",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Duplicates a given view"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Views, DSRevitNodesUI",
+      "SelectedIndex": 8,
+      "SelectedString": "Level 1",
+      "NodeType": "ExtensionNode",
+      "Id": "f8de44190df7483e8de630e769dcf516",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a5bf3a5de45348b986b117453a35ef77",
+          "Name": "Views",
+          "Description": "The selected Views",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All views available in the current document."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "4b97e896a83843608a2cefd165b7a9d7",
+      "End": "77cbcd5a19da432a92113d5830eb3562",
+      "Id": "d7997e1c71e648ec976d3cd84344176e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "148aec22c38a4a29bf272c08809dae6b",
+      "End": "56225156af2c430b9cc56f0fbe3b1eb5",
+      "Id": "93f8cae681fa49b7ad560de2fd0f970e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "a5bf3a5de45348b986b117453a35ef77",
+      "End": "684d210c2a5643c3a1421ac4d453a4f1",
+      "Id": "ca123a9f5a7541e0948c54ef1dd93dca",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "a5bf3a5de45348b986b117453a35ef77",
+      "End": "fb6ba9221e704c69a9f1379ec67ceb1e",
+      "Id": "7df6c3dd1bbb4b77bb092b384318c55f",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [
+    "237e943c-c1a0-4936-9269-1b5ad1dc8b4c"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Clockwork for Dynamo 2.x",
+      "Version": "2.1.0",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "4bb70b5585da4d509cc11393a1efa1fe"
+      ]
+    }
+  ],
+  "Thumbnail": null,
+  "GraphDocumentationURL": "https://www.julialubacheski.com/",
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.16",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "3.0",
+      "Data": {}
+    }
+  ],
+  "Author": "Julia Lubacheski",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.16.1.2727",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Name": "Element.Name",
+        "ShowGeometry": true,
+        "Id": "608635ff686c4d3da34b0e6a12e34e92",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 482.50738309505948,
+        "Y": 285.04321971737164
+      },
+      {
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Id": "9b8be5646a26438389bffa4711f4ff23",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 778.96627121832148,
+        "Y": 282.60674575633573
+      },
+      {
+        "Name": "View.Duplicate",
+        "ShowGeometry": true,
+        "Id": "4bb70b5585da4d509cc11393a1efa1fe",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1209.7198178115032,
+        "Y": 112.48024400194495
+      },
+      {
+        "Name": "Views",
+        "ShowGeometry": true,
+        "Id": "f8de44190df7483e8de630e769dcf516",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 23.884001249758285,
+        "Y": 111.72378459556461
+      }
+    ],
+    "Annotations": [],
+    "X": 139.66461570752506,
+    "Y": 189.84292921082084,
+    "Zoom": 0.6316196612559033
+  }
+}

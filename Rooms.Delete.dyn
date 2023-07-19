@@ -1,0 +1,274 @@
+{
+  "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
+  "IsCustomNode": false,
+  "Description": "Deleta rooms perdidas",
+  "Name": "Rooms.Delete",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "DSRevitNodesUI.RoomsByStatus, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "73dd24e34aa74c22b1d4fb9f1707bd30",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "fd3e1fe7383c446e83c2bee24e5b3c98",
+          "Name": "PlacedRooms",
+          "Description": "Placed Rooms in the document",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f6e09d49201347309a5fe6af3f32999d",
+          "Name": "UnplacedRooms",
+          "Description": "Unplaced Rooms in the document",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "15adf1f1165e4098a8e311784f2af444",
+          "Name": "NotEnclosedRooms",
+          "Description": "Not Enclosed Rooms in the document",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "66a8425c66a94351ad057b1319888063",
+          "Name": "RedundantRooms",
+          "Description": "Elements at the given level.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Returns all rooms in the document grouped by status"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.Delete@Revit.Elements.Element",
+      "Id": "bce722dcc18248a9840b09e53b3dddd2",
+      "Inputs": [
+        {
+          "Id": "81956e5ee86d475487b681dead834079",
+          "Name": "element",
+          "Description": "The element to delete.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "16f8c011618740e49db4ab65f09d27ec",
+          "Name": "int[]",
+          "Description": "The list of element id's deleted, including any dependent elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Delete the element and any elements that are totally dependent upon the element.\n\nElement.Delete (element: Element): int[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.Delete@Revit.Elements.Element",
+      "Id": "5219a20df26c4405bf28db2eb6a70b08",
+      "Inputs": [
+        {
+          "Id": "448319756d2f496395fc6e91842ce923",
+          "Name": "element",
+          "Description": "The element to delete.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a3b216b49c3a47248904271877768d93",
+          "Name": "int[]",
+          "Description": "The list of element id's deleted, including any dependent elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Delete the element and any elements that are totally dependent upon the element.\n\nElement.Delete (element: Element): int[]"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.RoomsByStatus, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "b2ce7633caa84f7fb6030a267f392abb",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "73ff7cfacc1349458ede69b3d9b97178",
+          "Name": "PlacedRooms",
+          "Description": "Placed Rooms in the document",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c00bb2d5d41c4172899bcbd84384cb64",
+          "Name": "UnplacedRooms",
+          "Description": "Unplaced Rooms in the document",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f55ecbd3263243b59cf2c20dc7033514",
+          "Name": "NotEnclosedRooms",
+          "Description": "Not Enclosed Rooms in the document",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0416e5f303424d68af827b02a47e210d",
+          "Name": "RedundantRooms",
+          "Description": "Elements at the given level.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Returns all rooms in the document grouped by status"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "15adf1f1165e4098a8e311784f2af444",
+      "End": "81956e5ee86d475487b681dead834079",
+      "Id": "c9968663d9324a1b85e2fdd1041fe05d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "c00bb2d5d41c4172899bcbd84384cb64",
+      "End": "448319756d2f496395fc6e91842ce923",
+      "Id": "66f284beb89a478cabb1998e6b278b68",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": "https://www.julialubacheski.com/",
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.16",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "3.0",
+      "Data": {}
+    }
+  ],
+  "Author": "Julia Lubacheski",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.16.1.2727",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Name": "Rooms By Status",
+        "ShowGeometry": true,
+        "Id": "73dd24e34aa74c22b1d4fb9f1707bd30",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 201.59999999999997,
+        "Y": 238.8
+      },
+      {
+        "Name": "Element.Delete",
+        "ShowGeometry": true,
+        "Id": "bce722dcc18248a9840b09e53b3dddd2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 531.04759416888362,
+        "Y": 306.83949433719613
+      },
+      {
+        "Name": "Element.Delete",
+        "ShowGeometry": true,
+        "Id": "5219a20df26c4405bf28db2eb6a70b08",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 545.03613645656947,
+        "Y": -27.334799318753312
+      },
+      {
+        "Name": "Rooms By Status",
+        "ShowGeometry": true,
+        "Id": "b2ce7633caa84f7fb6030a267f392abb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 189.98669340233766,
+        "Y": -64.652074993531983
+      }
+    ],
+    "Annotations": [],
+    "X": 44.712574137447007,
+    "Y": 165.52683365253307,
+    "Zoom": 0.937432296686001
+  }
+}
